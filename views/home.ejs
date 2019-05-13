@@ -1,0 +1,38 @@
+<%- include('template/head') %>
+<%- include('template/header') %>
+<div class="count-vagas">
+    <div class="container">
+        <div class="row boxs">
+            <div class="col-md-4 col-sm-12 col-xs-12 box">
+                <div class="icon"><i class="fal fa-check"></i></div>
+                <div id="count"><%- Number[0].number %></div>
+                <span>Vagas Dispóniveis</span>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 box">
+                <div class="icon"><i class="fal fa-database"></i></div>
+                <div id="count">10</div>
+                <span>Vagas Preenchidas</span>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 box">
+                <div class="icon"><i class="fal fa-users"></i></div>
+                <div id="count">5</div>
+                <span>Usuários Cadastrados</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="vagas">
+    <div class="container">
+        <h1 class="text-center">Vagas Dispóniveis</h1>
+        <% Categorias.forEach( Categoria => { %>
+            <div class="box">
+                <h2><%- Categoria.categoria %></h2>
+                <% Categoria.vagas.forEach( Vaga => { %>
+                    <span><a href="/vaga/open/<%- Vaga.id %>"><%= Vaga.titulo %> - <%= Vaga.descricao%></a></span>
+                <% }) %>
+            </div>
+        <% }) %>
+    </div>
+</div>
+<%- include('template/footer') %>

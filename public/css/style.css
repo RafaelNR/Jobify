@@ -1,0 +1,121 @@
+:root {
+    --cor-primaria:#5A0A71;
+    --cor-secundaria: pink;
+    --cor-terciaria:#5A0A71;
+}
+html {
+    height: 100vh;
+}
+
+body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+.btn-jobify{
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    background: #5A0A71;
+}
+.btn-jobify:hover{
+    color: white;
+    box-shadow: rgba(50, 50, 50, 0.3) 0px 1px 6px 0px;
+}
+.footer {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.navbar{
+    box-shadow: rgba(50, 50, 50, 0.3) 0px 1px 6px 0px;
+}
+.navbar-nav{
+    width: 100%;
+}
+.navbar-nav .nav-item .nav-link{
+    color: var(--cor-primaria);
+}
+.navbar-nav .btn-login{
+    border: 1px solid var(--cor-primaria);
+}
+.navbar-nav .btn-login:hover{
+    background: var(--cor-primaria);
+    color: white !important;
+}
+.header{
+    width: 100%;
+    height: 500px;
+    background-image: url('/images/banner.jpg');
+    background-position: center;
+}
+.header-pages{
+    width: 100%;
+    height: 250px;
+    background-image: url('/images/banner.jpg');
+    background-position: center;
+}
+body .count-vagas{
+    width: 100%;
+    height: auto;
+    background: var(--cor-primaria);
+}
+body .count-vagas .boxs{
+    height: auto;
+}
+
+body .count-vagas .boxs .box{
+    margin: 50px 0;
+    color: white;
+    text-align: center;
+}
+
+body .count-vagas .boxs .box .icon{
+    font-size: 45px;
+}
+
+body .count-vagas .boxs #count{
+    font-size: 50px;
+}
+
+body .count-vagas .boxs span{
+    letter-spacing: 2px;
+}
+
+body .vagas .container{
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+body .vagas .container .box{
+    border: 1px solid #ddd;
+    border-bottom: 2px solid #5A0A71;
+    box-shadow: 6px 6px 29px -13px rgba(0,0,0,0.75);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px 0;
+}
+body .vagas .container h1{
+    margin-bottom: 50px;
+}
+body .vagas .container .box span{
+    padding-left: 10px;
+    display: block;
+}
+footer{
+    background: var(--cor-primaria);
+    width: 100%;
+    height: 35px;
+}
+
+footer span{
+    margin-right: 15px;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    height: 35px;
+    justify-content: flex-end;
+    align-items: center;
+}
+body .vaga label,
+body .categoria label{
+    display: block;
+}

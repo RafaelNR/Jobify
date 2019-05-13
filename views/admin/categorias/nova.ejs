@@ -1,0 +1,21 @@
+<%- include('../../template/head') %>
+<%- include('../../template/nav-admin') %>
+<div class="container mt-5">
+    <div class="card categoria">
+        <div class="card-header">
+            <h4>Nova Categoria</h4>
+        </div>
+        <div class="card-body">
+            <form action="" method="POST">
+                <label for="Categoria">Nome da Categoria</label>
+                <div class="input-group col-12 mb-3">
+                    <input type="text" class="form-control" name="categoria" id="categoria" placeholder="Ex: Front-end">
+                </div>
+                <div class="input-group col-12 mb-3 d-flex justify-content-end">
+                    <input class="btn btn-jobify" type="submit" value="Salvar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('../../template/footer') %> 

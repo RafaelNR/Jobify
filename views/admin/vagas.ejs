@@ -1,0 +1,31 @@
+<%- include('../template/head') %>
+<%- include('../template/nav-admin') %>
+<div class="container">
+    <div class=""><a href="/admin/vagas/nova">Nova Vaga</a></div>
+    <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% Vagas.forEach( Vaga => { %>
+                <tr>
+                    <th scope="row"><%= Vaga.id %></th>
+                    <td><%= Vaga.categoria %></td>
+                    <td><%= Vaga.titulo %></td>
+                    <td><%= Vaga.descricao%></td>
+                    <td>
+                        <a href="/admin/vagas/editar/<%- Vaga.id %>"><i class="far fa-edit"></i></a>
+                        <a href="/admin/vagas/excluir/<%- Vaga.id %>"><i class="far fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+    </table>
+</div>
+<%- include('../template/footer') %>

@@ -1,0 +1,38 @@
+<%- include('../../template/head') %>
+<%- include('../../template/nav-admin') %>
+<div class="container mt-5">
+    <div class="card vaga">
+        <div class="card-header">
+            <h4>Editar Vaga</h4>
+        </div>
+        <div class="card-body">
+            <form action="" method="POST">
+                <label for="titulo">Titulo da Vagas - <%= Vaga.fdsfsd %></label>
+                <div class="input-group col-12 mb-3">
+                    <input type="text" class="form-control" name="titulo" id="titulo" value="<%- Vaga.titulo %>" placeholder="Ex: Programador">
+                </div>
+                <label for="descricao">Descrição</label>
+                <div class="input-group col-12 mb-3">
+                    <textarea name="descricao" class="form-control" id="descricao" cols="30" rows="10" placeholder="Ex: Trabalho remoto"><%- Vaga.descricao %></textarea>
+                </div>
+                <label for="categoria">Categoria</label>
+                <div class="input-group col-12 mb-3">
+                    <select class="form-control" name="categoria" id="categoria" value="<%- Vaga.categoria %>">
+                            <option value="">Selecione a Categoria</option>
+                        <% Categorias.forEach( Categoria => { %>
+                            <% if(Categoria.id === Vaga.categoria ) { %>
+                                <option value="<%- Categoria.id %>" selected><%= Categoria.categoria %></option>
+                            <% }else{%>
+                                <option value="<%- Categoria.id %>"><%= Categoria.categoria %></option>
+                            <% } %>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="input-group col-12 mb-3 d-flex justify-content-end">
+                    <input class="btn btn-jobify"type="submit" value="Salvar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('../../template/footer') %> 
