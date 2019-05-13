@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 // Caso não encontre a rota, pesquisa na pasta public
-app.use(express.static(path.join(__dirnamem, 'public')))
+app.use(express.static(path.join(__dirname, 'public')))
 // Body Parser
 app.use(parser.urlencoded({extended: true}))
 
