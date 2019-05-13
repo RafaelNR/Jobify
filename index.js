@@ -11,11 +11,12 @@ const parser = require('body-parser')
 
 const port = process.env.PORT || 3000
 
+app.set('views', path.join(__dirname, 'views'))
 // User sistema de views 
 app.set('view engine', 'ejs')
 
 // Caso não encontre a rota, pesquisa na pasta public
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirnamem, 'public')))
 // Body Parser
 app.use(parser.urlencoded({extended: true}))
 
