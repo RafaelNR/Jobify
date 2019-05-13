@@ -1,9 +1,11 @@
 const express = require('express')
 const app = express()
 
+const path = require('path')
+
 // Banco de Dados
 const sqlite = require('sqlite');
-const dbConnection = sqlite.open('banco.sqlite', { Promise })
+const dbConnection = sqlite.open(path.resolve(__dirname, 'banco.sqlite'), { Promise })
 
 const parser = require('body-parser')
 
