@@ -7,6 +7,8 @@ const dbConnection = sqlite.open('banco.sqlite', { Promise })
 
 const parser = require('body-parser')
 
+const port = process.env.PORT || 3000
+
 // User sistema de views 
 app.set('view engine', 'ejs')
 
@@ -123,7 +125,7 @@ const init = async() => {
 }
 init();
 
-app.listen(3000, (err) => {
+app.listen(port, (err) => {
     if(err){
         console.log('Erro ao iniciar o servidor')
     }else{
