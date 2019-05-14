@@ -11,6 +11,15 @@ const parser = require('body-parser')
 
 const port = process.env.PORT || 3000
 
+
+app.use('/admin/home', (req,res,next) => {
+    if(req.hostname === 'localhost'){
+        next()
+    }else{
+        res.redirect('/')
+    }
+})
+
 app.set('views', path.join(__dirname, 'views'))
 // User sistema de views 
 app.set('view engine', 'ejs')
@@ -41,6 +50,9 @@ app.get('/vaga/open/:id', async (request, response) => {
     response.render('./vagas/open', { Vaga });
 })
 
+app.get('/admin', (request, response) => {
+    response.redirect('/admin/home');
+})
 
 app.get('/admin/home', (request, response) => {
     response.render('./admin/home');
